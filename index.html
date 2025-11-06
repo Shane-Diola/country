@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Canada</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(45deg, #ffffff 0%, #ffffff 45%, #ffffff 100%);
+      margin: 0;
+      color: #ffffff;
+      scroll-behavior: smooth;
+      line-height: 1.7;
+    }
+
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    #home .content p {
+      text-align: center;
+    }
+
+    nav.navbar {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      font-weight: 500;
+    }
+
+    .navbar-brand {
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .nav-link {
+      color: #fff !important;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      color: #ffb6c1 !important;
+    }
+
+    .logo-img {
+      height: 1.5em;
+      width: auto;
+      margin-right: 10px;
+      margin-left: -80px;
+    }
+
+    .nav-item {
+      margin-left: 15px;
+    }
+
+    #home {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    video.fullscreen-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    #home .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    #home .content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ffffff;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    #features {
+      background-color: rgb(255, 255, 255);
+      color: #080707;
+      padding: 0px;
+      border-top-left-radius: 0x;
+      border-top-right-radius: 0px;
+      box-shadow: 0;
+
+    }
+
+
+    .desc-card {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .desc-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .desc-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #History {
+      background-color: #f8f9fa;
+      color: #212529;
+      padding: 60px 0;
+    }
+
+    #History .section-title {
+      color: #000000;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    #History p {
+      color: #000000;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    #History img {
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+
+    #features>.container>.section-title {
+      color: #000000;
+      font-size: 40px;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .fade-in-delayed {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 10s;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    #History,
+    #features {
+      background-color: #ffffff;
+      color: #212529;
+      padding: 60px 0;
+    }
+
+    .overview-container {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+    body.dark-mode .overview-container {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+
+    #features .desc-card h1,
+    #features .desc-card h2,
+    #features .desc-card h3 {
+      color: rgb(0, 0, 0)7;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    body,
+    .main-content {
+      background: #ffffff;
+      color: #000000;
+      transition: all 0.3s ease;
+    }
+
+    .food {
+      background-color: #f8f9fa;
+      color: #212529;
+      padding: 60px 0;
+    }
+
+    .food-img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .food-title {
+      color: rgb(0, 0, 0);
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    #heritage .section-title {
+      font-family: "Poppins", sans-serif;
+      color: #000000;
+      font-size: 40px;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background-color: #000000;
+      color: #ffffff;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+
+    body.dark-mode #History {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode #History .section-title {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode #History p {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode nav.navbar {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    body.dark-mode .nav-link {
+      color: #f0f0f0 !important;
+    }
+
+    body.dark-mode .nav-link:hover {
+      color: #ffb6c1 !important;
+    }
+
+    body.dark-mode .desc-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .desc-card h1,
+    body.dark-mode .desc-card h2,
+    body.dark-mode .desc-card h3 {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode #features,
+    body.dark-mode #History,
+    body.dark-mode #heritage,
+    body.dark-mode .food {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode #features .section-title,
+    body.dark-mode #History .section-title,
+    body.dark-mode #heritage .section-title {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode p {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode footer {
+      background-color: #111;
+      color: #f0f0f0;
+    }
+
+    #Map {
+      background-color: #f8f9fa;
+      color: #212529;
+      padding: 60px 0;
+    }
+
+    body.dark-mode #Map .section-title {
+      color: #f0f0f0;
+    }
+
+
+    body.dark-mode #Map {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    .map-img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #Map .section-title {
+      color: #000000;
+      font-size: 40px;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+
+      <img src="logo.jpg" alt="Logo" class="logo-img">
+      <a class="navbar-brand fw-bold text-white" href="#home">Canada</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#History">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Map">Map</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#heritage">Heritage</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="theme-toggle">Dark Mode</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="text-center">
+    <video src="Canada.mov" autoplay muted loop playsinline class="fullscreen-video"></video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="fw-bold display-4 fade-in-delayed">Welcome to Canada</h1>
+      <p class="lead fade-in-delayed">Explore the beauty and innovation of the Great North.</p>
+
+    </div>
+  </section>
+  <section id="History" class="text-center mt-5">
+    <div class="container py-5 overview-container">
+      <h2 class="section-title mb-5">OVERVIEW</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0 text-center">
+          <img src="history.jpg" alt="History" class="img-fluid rounded shadow" style="max-width: 80%; height: auto;">
+        </div>
+        <div class="col-md-6 text-start">
+          <p style="font-size: 1.1rem; line-height: 1.8; text-align: justify;">
+            <b>Canada</b> has a long and fascinating history, shaped by its Indigenous peoples who lived here for
+            thousands of years. European explorers arrived in the 15th and 16th centuries, leading to settlements by the
+            French and British. Over time, Canada grew through confederation, trade, and immigration, becoming a diverse
+            and prosperous nation. Today, Canada stands as a country rich in culture, natural beauty, and innovation,
+            reflecting its resilient and collaborative past.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="Map" class="text-center">
+    <div class="container-lg">
+      <h2 class="section-title mb-4">MAP</h2>
+      <div class="row align-items-center">
+        <div class="col-md-12 d-flex justify-content-center mb-4 mb-md-0">
+          <a href="https://www.bing.com/maps/search?mepi=60%7E%7EEmbedded%7ELargeMapLink&ty=18&vdpid=39&v=2&sV=1&FORM=MIRE&q=Canada&ss=id.sid%3A370ed614-32e1-4326-a356-dc0a7dd56aaa&mb=73%7E-142.100006%7E40.900002%7E-51.900002&ppois=56.95000076293945_-97.00000381469727_Canada_%7E&cp=60.714411%7E-97.000004&lvl=3.6&style=r"
+            target="_blank">
+            <img src="canada.jpg" alt="Canada Map" class="map-img">
+          </a>
+        </div>
+        <div class="col-md-12 text-center mt-3">
+          <a href="https://www.bing.com/maps/search?mepi=60%7E%7EEmbedded%7ELargeMapLink&ty=18&vdpid=39&v=2&sV=1&FORM=MIRE&q=Canada&ss=id.sid%3A370ed614-32e1-4326-a356-dc0a7dd56aaa&mb=73%7E-142.100006%7E40.900002%7E-51.900002&ppois=56.95000076293945_-97.00000381469727_Canada_%7E&cp=60.714411%7E-97.000004&lvl=3.6&style=r"
+            class="btn btn-primary" target="_blank">Explore the Map</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="text-center">
+    <div class="container">
+      <h2 class="section-title">FEATURES</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-4">
+          <div class="desc-card">
+            <img src="novascotia.jpg" alt="Novascotia" class="img-fluid">
+            <h1>
+              Nova Scotia
+            </h1>
+            <p>
+              Discover the natural beauty of Nova Scotia, Canada. From its rugged coastline and scenic Cabot Trail to
+              historic towns and lighthouses, Nova Scotia offers breathtaking landscapes and rich maritime culture.
+              Explore its charming villages, enjoy fresh seafood, and experience the unique heritage that makes this
+              province truly special.
+            </p>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="desc-card">
+            <img src="toronto.jpg" alt="Toronto" class="img-fluid">
+            <h1>
+              Toronto
+            </h1>
+            <p>
+              Explore the vibrant city of Toronto, Canada’s largest metropolis. From its iconic CN Tower and bustling
+              waterfront to diverse neighborhoods and world-class cultural attractions, Toronto offers something for
+              every traveler. Experience the city’s dynamic arts, cuisine, and events that make it a hub of innovation
+              and culture in Canada.
+            </p>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="desc-card">
+            <img src="tenpeaks.jpg" alt="Ten Peaks" class="img-fluid">
+            <h1>
+              Ten Peaks
+            </h1>
+            <p>
+              Experience the breathtaking beauty of the Ten Peaks in Canada. These majestic mountains offer stunning
+              views, pristine hiking trails, and unforgettable natural scenery. Whether you’re exploring the alpine
+              lakes, spotting wildlife, or capturing the perfect photograph, the Ten Peaks provide an adventure that
+              connects you with the heart of the Canadian Rockies.
+            </p>
+          </div>
+        </div>
+        <div class="container mt-4">
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <a href="https://www.planetware.com/tourist-attractions/canada-cdn.htm" class="btn btn-primary"
+                target="_blank">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <section id="heritage" class="food text-center">
+            <div class="container">
+              <h2 class="section-title">TASTES & TALES</h2>
+
+              <div class="row justify-content-center">
+                <div class="col-md-6 mb-4">
+                  <div class="desc-card">
+                    <img src="cltr.jpg" alt="Culture" class="culture">
+                    <h1 class="food-title">
+                      Roots & Rhythms
+                    </h1>
+                    <p>
+                      Discover the vibrant culture of Canada. From the rich Indigenous traditions of storytelling and
+                      art to the French heritage of Quebec and the multicultural celebrations in Toronto and Vancouver,
+                      Canada is a tapestry of customs, languages, and festivals. Experience lively music, colorful
+                      festivals, and local traditions that reflect the unique spirit of this diverse nation.
+                    </p>
+
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="desc-card">
+                    <img src="food2.jpg" alt="Food2" class="food-img">
+                    <h1 class="food-title">
+                      Sweet, Savory & Beyond
+                    </h1>
+                    <p>
+                      Explore the delicious flavors of Canada. From the iconic poutine in Quebec to fresh Atlantic
+                      seafood in Nova Scotia, and from maple syrup treats in Ontario to buttery butter tarts in the
+                      Prairies, Canada offers a diverse culinary landscape. Savor traditional dishes, discover local
+                      specialties, and experience the rich cultural heritage reflected in every bite.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <script>
+            const toggle = document.getElementById('theme-toggle');
+            toggle.addEventListener('click', function (e) {
+              e.preventDefault();
+              document.body.classList.toggle('dark-mode');
+
+              if (document.body.classList.contains('dark-mode')) {
+                toggle.textContent = 'Light Mode';
+              } else {
+                toggle.textContent = 'Dark Mode';
+              }
+            });
+
+          </script>
+
+          <footer>
+            © 2025 Shane B. Diola | All Rights Reserved
+          </footer>
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
